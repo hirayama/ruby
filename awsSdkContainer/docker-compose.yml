@@ -1,0 +1,7 @@
+version: '2'
+services:
+  aws-sdk-ruby:
+    build: ./
+    working_dir: /srv/aws-sdk-ruby
+    volumes:
+      - .:/srv/aws-sdk-ruby
