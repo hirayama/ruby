@@ -1,7 +1,17 @@
-version: '2'
+version: '3'
 services:
-  aws-sdk-ruby:
+  ruby-container:
     build: ./
-    working_dir: /srv/aws-sdk-ruby
+    working_dir: /app
     volumes:
-      - .:/srv/aws-sdk-ruby
+      - .:/app
+      - bundle:/bundle
+    environment:
+      BUNDLE_APP_CONFIG: 
+      BUNDLE_PATH: 
+      BUNDLE_BIN:
+      BUNDLE_SILENCE_ROOT_WARNING:
+    command: bundle install --path /bundle
+volumes:
+    bundle:
+      driver: local
