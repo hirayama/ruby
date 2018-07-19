@@ -1,17 +1,14 @@
 version: '3'
 services:
-  ruby-container:
+  myapp:
     build: ./
     working_dir: /app
     volumes:
       - .:/app
-      - bundle:/bundle
+      - bundle:/usr/local/bundle
     environment:
-      BUNDLE_APP_CONFIG: 
-      BUNDLE_PATH: 
-      BUNDLE_BIN:
-      BUNDLE_SILENCE_ROOT_WARNING:
-    command: bundle install --path /bundle
+      RUBYOPT: -EUTF-8
+    command: bundle install
 volumes:
     bundle:
       driver: local

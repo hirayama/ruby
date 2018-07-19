@@ -10,17 +10,17 @@
 `docker-compose build`
 
 **for bundle install**
-`docker-compose run --rm ruby-container`
+`docker-compose run --rm myapp`
 
 ## Usage
 
 ### basic
 
-`docker-compose run --rm ruby-container ruby ./test/index.rb`
+`docker-compose run --rm myapp ruby ./test/index.rb`
 
 ### after add gem
 
-Edit `Gemfile`, then `docker-compose run --rm ruby-container`.
+Edit `Gemfile`, then `docker-compose run --rm myapp`.
 
 ## about Volume
 
